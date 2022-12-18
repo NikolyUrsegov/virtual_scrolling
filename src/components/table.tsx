@@ -25,7 +25,9 @@ export const Table: React.FC<TablePropsType> = ({data, rowHeight, visibleRows}) 
     }
 
     function onScroll  (e: any) {
-        setStartRow(Math.floor(e.target.scrollTop / rowHeight))
+        if((e.target.scrollTop / rowHeight) < data.length) {
+            setStartRow(Math.floor(e.target.scrollTop / rowHeight))
+        }
     }
 
     useEffect(() => {
@@ -38,7 +40,7 @@ export const Table: React.FC<TablePropsType> = ({data, rowHeight, visibleRows}) 
     return (
         <div
             className='viewPort'
-            style={{height: rowHeight * visibleRows + 11}}
+            style={{height: rowHeight * visibleRows + 20}}
             ref={viewPortRef}
         >
             <div style={{height: getTopHeight()}}/>

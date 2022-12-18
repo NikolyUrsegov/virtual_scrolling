@@ -5,10 +5,10 @@ import {Table} from "../components/table";
 
 function App() {
 
-  console.log(makeTableData(10, 10))
+  console.log(makeTableData(10, 10000))
   return (
     <div className="App">
-      <Table data={makeTableData(10, 100000)} rowHeight={35} visibleRows={10}/>
+      <Table data={makeTableData(10, 10000)} rowHeight={35} visibleRows={10}/>
     </div>
   );
 }
