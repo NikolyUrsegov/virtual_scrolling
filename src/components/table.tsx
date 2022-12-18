@@ -35,7 +35,7 @@ export const Table: React.FC<TablePropsType> = ({data, rowHeight, visibleRows}) 
         return () => {
             viewPortRef?.current?.removeEventListener('scroll', onScroll)
         }
-    })
+    }, [])
 
     return (
         <div
